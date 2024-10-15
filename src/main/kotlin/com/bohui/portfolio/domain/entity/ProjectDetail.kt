@@ -10,7 +10,7 @@ class ProjectDetail(content: String, url: String?, isActive: Boolean) : BaseEnti
     @Column(name = "project_detail_id")
     var id: Long? = null
 
-    var content: String? = content
+    var content: String = content
 
     var url: String? = url
 
