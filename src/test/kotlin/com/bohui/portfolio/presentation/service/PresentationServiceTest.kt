@@ -25,7 +25,7 @@ class PresentationServiceTest {
     @Test
     fun testGetIntroductions() {
 
-        // given 결과가 주어지고
+        // given 조건이 주어지고
         val introductions = mutableListOf<Introduction>()
         for (i in 1..DATA_SIZE) { // 1, 3, 5, 7, 9 -> false / 2, 4, 6, 8 -> true
             val introduction = Introduction(content = "${i}", isActive = i % 2 == 0)
@@ -68,8 +68,8 @@ class PresentationServiceTest {
 
         // then
         var expectedSize = DATA_SIZE / 2
-        if (DATA_SIZE % 2 != 0) {
-            expectedSize += 1
+        if (DATA_SIZE % 2 != 0) { // DATA_SIZE가 9일 경우, 2로 나누면 4.5 -> 0.5를 버린다
+            expectedSize += 1 // 그래서 1을 더해준다.
         }
         Assertions.assertThat(linkDTOs).hasSize(expectedSize)
         for (linkDTO in linkDTOs) {

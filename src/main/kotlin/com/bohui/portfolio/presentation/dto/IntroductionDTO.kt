@@ -6,6 +6,6 @@ data class IntroductionDTO(
     val content: String
 ) {
     constructor(introduction: Introduction) : this(
-        content = introduction.content
+        content = introduction.content // import한다고 함
     )
 }

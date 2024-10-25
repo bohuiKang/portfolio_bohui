@@ -4,16 +4,16 @@ import jakarta.persistence.*
 import java.time.LocalDate
 
 @Entity
-class Achievement(
+class Achievement( //생성자들
     title: String,
     description: String,
     achievedDate: LocalDate?, //null ok
     host: String,
-    isActive: Boolean //기본생성자
+    isActive: Boolean
 ) : BaseEntity() {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // DB 테이블의 PK 타입
     @Column(name = "achievement_id")
     var id: Long? = null
 

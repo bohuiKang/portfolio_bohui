@@ -25,8 +25,7 @@ class PresentationViewController(
         val links = presentationService.getLinks()
         model.addAttribute("links", links)
 
-        return "presentation/index" //html 파일 찾아라
-
+        return "presentation/index" //html 파일 위치 리턴
     }
 
     @GetMapping("/resume")

@@ -10,7 +10,7 @@ import java.time.LocalDate
 
 @Component
 @Profile(value = ["default"])
-class DataInitializer(
+class DataInitializer( //이게 바로 생성자 주입
     private val achievementRepository: AchievementRepository,
     private val introductionRepository: IntroductionRepository,
     private val linkRepository: LinkRepository,
@@ -22,7 +22,7 @@ class DataInitializer(
     //val log = LoggerFactory.getLogger(DataInitializer::class.java)
 
     @PostConstruct
-    fun initializerData(){
+    fun initializerData(){ //메인메소드
         //실제로 이 메소드가 언제 실행되는지 확인
         println("스프링이 실행되었습니다. 테스트 데이터를 초기화합니다.")
         //log.info("스프링이 실행되었습니다. 테스트 데이터를 초기화합니다.")

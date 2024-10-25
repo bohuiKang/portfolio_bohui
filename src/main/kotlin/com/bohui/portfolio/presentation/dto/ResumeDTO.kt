@@ -27,8 +27,8 @@ class ResumeDTO(
             description = it.description,
             host = it.host,
             achievedDate = it.achievedDate
-                ?.format(DateTimeFormatter.ISO_LOCAL_DATE) // yyyy-mm-dd
-                ?.replace("-", ".") // '/' -> '.'
+                ?.format(DateTimeFormatter.ISO_LOCAL_DATE) // yyyy-mm-dd 으로 포맷
+                ?.replace("-", ".") // '/' -> '.' 변경
         )
     }
 

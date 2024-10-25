@@ -1,7 +1,6 @@
 package com.bohui.portfolio.domain.entity
 
 import jakarta.persistence.*
-import java.awt.print.Book
 
 @Entity
 class Experience( //생성자들
