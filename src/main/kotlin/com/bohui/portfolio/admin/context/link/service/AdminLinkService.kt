@@ -1,7 +1,7 @@
 package com.bohui.portfolio.admin.context.link.service
 
 import com.bohui.portfolio.admin.data.TableDTO
-import com.bohui.portfolio.domain.entity.Achievement
+import com.bohui.portfolio.domain.entity.Link
 import com.bohui.portfolio.domain.repository.LinkRepository
 import org.springframework.stereotype.Service
 
@@ -11,7 +11,7 @@ class AdminLinkService(
 ) {
 
     fun getLinkTable(): TableDTO {
-        val classInfo = Achievement::class
+        val classInfo = Link::class
         val entities = linkRepository.findAll()
 
         return TableDTO.from(classInfo, entities)

@@ -1,7 +1,7 @@
 package com.bohui.portfolio.admin.context.skill.service
 
 import com.bohui.portfolio.admin.data.TableDTO
-import com.bohui.portfolio.domain.entity.Achievement
+import com.bohui.portfolio.domain.entity.Skill
 import com.bohui.portfolio.domain.repository.SkillRepository
 import org.springframework.stereotype.Service
 
@@ -11,7 +11,7 @@ class AdminSkillService(
 ) {
 
     fun getSkillTable(): TableDTO {
-        val classInfo = Achievement::class
+        val classInfo = Skill::class
         val entities = skillRepository.findAll()
 
         return TableDTO.from(classInfo, entities)
