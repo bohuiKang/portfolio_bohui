@@ -26,11 +26,11 @@ class AdminProjectSkillService(
         for (project in projects) {
             project.skills.forEach {
                 val record = mutableListOf<String>()
-                record.add(it.id.toString())
-                record.add(it.project.id.toString())
-                record.add(it.project.name)
-                record.add(it.skill.id.toString())
-                record.add(it.skill.name)
+                record.add(it.id.toString()) // 프로젝트스킬 id
+                record.add(it.project.id.toString()) // 프로젝트 id
+                record.add(it.project.name) // 프로젝트 name
+                record.add(it.skill.id.toString()) // 스킬 id
+                record.add(it.skill.name) // 스킬 name
                 record.add(it.createdDateTime.toString())
                 record.add(it.updatedDateTime.toString())
                 records.add(record)
