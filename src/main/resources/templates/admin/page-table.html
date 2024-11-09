@@ -1,16 +1,6 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
-
-<div th:replace="~{admin/fragments/fragment-head :: head}"></div>
-
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/layouts/layout-admin :: layout(~{:: main})}"> <!-- 앞에 '/' 붙이면 안됨 -->
 <body>
-
-  <!-- ======= Header ======= -->
-  <div th:replace="~{admin/fragments/fragment-header :: header}"></div>
-
-  <!-- ======= Sidebar ======= -->
-  <div th:replace="~{admin/fragments/fragment-sidebar :: sidebar}"></div>
-
   <main id="main" class="main">
 
     <div class="pagetitle">
@@ -760,12 +750,5 @@
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-
-  <div th:replace="~{admin/fragments/fragment-footer :: footer}"></div>
-  <div th:replace="~{admin/fragments/fragment-foot :: foot}"></div>
-  <div th:replace="~{admin/fragments/fragment-script-util :: util}"></div>
-
 </body>
-
 </html>
