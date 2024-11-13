@@ -5,6 +5,8 @@
 
     <div th:replace="~{admin/fragments/fragment-page-title :: pageTitle}"></div>
 
+    <div th:replace="~{admin/fragments/fragment-form :: form(${formElements})}"></div>
+
     <div th:replace="~{admin/fragments/fragment-datatable :: datatable(${table})}"></div>
     <!--  detail table  -->
     <th:block th:if="${hasDetails}">
