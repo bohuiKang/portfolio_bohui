@@ -2,16 +2,17 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
 
-<div class="modal fade" id="basicModal" tabindex="-1"
+<div class="modal fade" id="ExtralargeModal" tabindex="-1"
   th:fragment="modalForm(formElements)" th:id="|${pageName}Modal|">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
+
       <div class="modal-header">
-        <h5 class="modal-title" th:text="|Edit ${pageName}|">Basic Modal</h5>
+        <h5 class="modal-title" th:text="|Edit ${pageName}|">Extra Large Modal</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
 
+      <div class="modal-body">
         <!-- Floating Labels Form -->
         <form class="row g-3" th:id="|${#strings.toLowerCase(pageName)}ModalForm}|" onsubmit="return false;">
 
@@ -22,7 +23,6 @@
             </div>
           </div>
 
-          <!-- The Bootstrap grid system has four classes: xs (phones), sm (tablets), md (desktops), and lg (larger desktops) -->
           <div class="col-md-12" th:each="formElement : ${formElements}"
                th:class="|col-md-${formElement.size} ${pageName}ModalFormElement|">
 
@@ -39,7 +39,7 @@
             </div>
 
             <!--  detail form 하나하나에 input 만들어 넣음  -->
-            <div class="row detail mt-3">
+            <div class="row modalDetail mt-3">
 
               <div th:class="|col-md-2 ${pageName}ModalDetailFormElement|">
                 <div class="form-floating">
@@ -57,14 +57,16 @@
             </div>
           </th:block>
         </form><!-- End floating Labels Form -->
-
       </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" th:text="닫기">Close</button>
         <button type="button" class="btn btn-primary" th:text="수정" th:onclick="completeEdit()">Save changes</button>
       </div>
+
     </div>
   </div>
+</div>
 
 </body>
 </html>
