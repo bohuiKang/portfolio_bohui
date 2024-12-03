@@ -16,7 +16,8 @@ class DataInitializer( //이게 바로 생성자 주입
     private val linkRepository: LinkRepository,
     private val skillRepository: SkillRepository,
     private val projectRepository: ProjectRepository,
-    private val experienceRepository: ExperienceRepository
+    private val experienceRepository: ExperienceRepository,
+    private val accountRepository: AccountRepository
     ) {
 
     //val log = LoggerFactory.getLogger(DataInitializer::class.java)
@@ -158,5 +159,9 @@ class DataInitializer( //이게 바로 생성자 주입
         )
         projectRepository.saveAll(mutableListOf(project1, project2))
 
+        val account = Account(
+            loginId = "admin1",
+            pw = "\$2a\$10\$w8qOcqoSIUbk04wHsgCkbONIRMQhqX2l2IvDe.eQiA408zo.SL3Em")
+        accountRepository.save(account)
     }
 }
